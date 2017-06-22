@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Session4 Ass3</title>
+        <!-- modify the style.css inside css folder -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Object before deleting any property will come in this div-->
+        <h3>Before Delete:</h3>
+        <div id="bef"></div>
+        <hr>
+        <!-- Object after deleting one property will come in this div-->
+        <h3>After Delete</h3>
+        <div id="aft"></div>
+        
+        
+        <!--script for object creation and deletion methos -->
+        <script >
+            //declaring object
+            var student_details={
+                StudentName : "Akshay",
+                DOB : "06-04-1993",
+                //This nested object
+                Address : {
+                    state : "Karnataka",
+                    city : "Bangalore",
+                    pincode : "560037"
+                },
+                eyecolor : "Blue",
+                mothername : "Anita"
+            };
+            
+            var obj_bef=JSON.stringify(student_details);//stringify the object to make printable in browser
+           document.getElementById("bef").innerHTML= obj_bef;//send the value to div
+            
+            //Delete the mothername property
+            delete student_details.mothername;
+            var obj_aft=JSON.stringify(student_details);
+             document.getElementById("aft").innerHTML= obj_aft;//send the valur=e to div innerhtml
+        </script>
+    </body>
+</html>
